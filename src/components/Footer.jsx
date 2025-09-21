@@ -40,18 +40,18 @@ export default function Footer() {
   ]
 
   return (
-    <footer className="bg-gray-950 text-white">
+    <footer className="bg-gray-950 text-white overflow-x-hidden">
       <div className="max-w-6xl mx-auto px-4 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* GDG Info */}
           <div>
             <div className="flex items-center gap-3 mb-6">
               <div className="w-10 h-10 rounded-full overflow-hidden shadow-md flex items-center justify-center">
                 <Image src="/logo.png" alt="logo" width={40} height={40} className="object-cover w-full h-full" />
               </div>
-              <div>
-                <div className="text-xl font-bold">GDG CUI-Wah</div>
-                <div className="text-gray-400 text-sm">Developer Community</div>
+              <div className="min-w-0">
+                <div className="text-xl font-bold truncate">GDG CUI-Wah</div>
+                <div className="text-gray-400 text-sm truncate">Developer Community</div>
               </div>
             </div>
             <p className="text-gray-300 mb-6 leading-relaxed">
@@ -111,26 +111,26 @@ export default function Footer() {
 
         {/* Newsletter */}
         <div className="mt-12 pt-8 border-t border-gray-800">
-          <div className="max-w-md mx-auto text-center">
-            <h3 className="text-xl font-semibold mb-4">Stay Updated</h3>
-            <p className="text-gray-300 mb-6">Get the latest updates about events and opportunities</p>
-            <div className="flex space-x-3">
+          <div className="max-w-md mx-auto text-center flex flex-col sm:flex-row sm:space-x-3 space-y-3 sm:space-y-0">
+            <div className="flex-1">
+              <h3 className="text-xl font-semibold mb-2">Stay Updated</h3>
+              <p className="text-gray-300 mb-2">Get the latest updates about events and opportunities</p>
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="flex-1 px-4 py-3 bg-gray-900 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none text-white placeholder-gray-500"
+                className="w-full px-4 py-3 bg-gray-900 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none text-white placeholder-gray-500"
               />
-              <button className="bg-red-500 text-white px-6 py-3 rounded-lg font-medium hover:opacity-90 transition">
-                Subscribe
-              </button>
             </div>
+            <button className="bg-red-500 text-white px-6 py-3 rounded-lg font-medium hover:opacity-90 transition">
+              Subscribe
+            </button>
           </div>
         </div>
 
         {/* Social & Bottom */}
         <div className="mt-12 pt-8 border-t border-gray-800">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="flex space-x-6 mb-4 md:mb-0">
+          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+            <div className="flex space-x-6">
               {socialLinks.map(social => (
                 <a key={social.name} href={social.href} className={`text-gray-400 ${social.color} transition-colors`} aria-label={social.name}>
                   <social.icon className="w-6 h-6" />
